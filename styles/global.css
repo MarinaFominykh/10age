@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.text {
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  
+  text-decoration: none;
+}
+
+.fields {
+  border: none;
+  padding: 0;
+}
