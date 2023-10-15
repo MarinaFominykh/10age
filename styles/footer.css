@@ -1,0 +1,21 @@
+.footer {
+  background-color: #ffefe7;
+
+   background-color: #ffefe7;
+  padding-bottom: 106px;
+}
+.footer__text {
+  max-width: 938px;
+  text-align: center;
+  margin: 0 auto 10px;
+  font-size: 14px;
+
+}
+
+.footer__span {
+  color: #fa6334;
+}
+
+.footer__span:hover {
+    text-decoration: underline;
+}

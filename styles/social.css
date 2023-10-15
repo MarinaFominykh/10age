@@ -1,0 +1,110 @@
+.social {
+margin: auto;
+background-color: #FFEFE7; 
+padding: 36px 0 63px 0;
+position: relative;
+
+}
+.social__back-wrp-right {
+position: absolute;
+  top: 0;
+  right: -81px;
+  width: 600px;
+}
+.social__back-right {
+  filter: blur(2.5px);
+  
+}
+.social__back-wrp-left {
+position: absolute;
+  top: -100px;
+  left: 150px;
+  width: 400px;
+  height: 683px;
+  transform: rotate(-130deg);
+  
+}
+.social__back-left {
+  filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  
+}
+.social__content {
+  position: relative;
+  z-index: 1;
+    max-width: 823px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: auto;
+}
+.social__title {
+text-align: center;
+font-size: 44px;
+font-weight: 600;
+letter-spacing: 0.44px;
+text-transform: uppercase;
+background: radial-gradient(6.91% 50% at 50% 50%, #FB8762 0%, #FA6334 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.social__subtitle {
+text-align: center;
+font-size: 26px;
+margin-bottom: 18px;
+
+}
+
+.social__social {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.social__item {
+    cursor: pointer;
+    transition: .3s;
+}
+.social__item:hover {
+   opacity: 0.6;
+}
+.social__icon {
+    width: 91px;
+    height: 91px;
+}
+.social__button {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.tooltip::after {
+  background: #fff;
+  border-radius: 8px 8px 8px 0px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  color: #000000;
+  content: attr(data-tooltip);
+  top: center;
+  left: 100px;
+  opacity: 0;
+  padding: 3px 7px;
+  position: absolute;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
