@@ -3,13 +3,21 @@
 }
 
 .page {
+  color: #464646;
   font-family: 'Montserrat', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
+  max-width: 1920px;
+  margin: auto;
 }
 .text {
   margin: 0;
+  color: #464646;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
 }
 
 .list {
