@@ -1,6 +1,6 @@
 .intro {
   position: relative;
-  min-height: 1851px;
+
   background: url(../images/back_intro.png) top left / contain no-repeat;
     /* background: url(../images/back_intro.png) top left / 100% 100% no-repeat; */
   background-color: #ffefe7;
@@ -51,7 +51,7 @@
 .intro__title {
   font-size: 41px;
   font-weight: 700;
-  line-height: 45px;
+  line-height: 110%;
   letter-spacing: 0.41px;
   text-transform: uppercase;
   padding-left: 70px;
@@ -101,7 +101,6 @@
 .intro__text {
   font-size: 25px;
   font-weight: 400;
-  line-height: 33px;
   margin-bottom: 17px;
 }
 .intro__text:nth-of-type(2) {
@@ -110,7 +109,6 @@
 .intro__text-bold {
   font-size: 32px;
   font-weight: 600;
-  line-height: 42px;
   margin-bottom: 64px;
 }
 
@@ -159,19 +157,65 @@
   margin-bottom: 22px;
 }
 .intro__title {
+  max-width: 590px;
 border-left: none;
-font-size: 20px;
 padding: 0;
-line-height: 22px;
+
 
 }
 .intro__img-wrp {
   margin-bottom: 22px;
 }
-.intro__subtitle {
-  font-size: 20px;
- }
+
  .intro__cake {
   display: none;
+ }
+ .intro__text {
+font-size: 16px;
+ }
+ .intro__text-bold {
+  font-size: 21px;
+  margin-bottom: 24px;
+ 
+ }
+ .intro__button {
+  font-size: 25px;
+  padding: 21px 80px;
+ }
+}
+
+@media screen and (max-width: 540px) {
+  .intro {
+    padding: 24px;
+    
+  }
+  .intro__header {
+    gap: 33px;
+  }
+.intro__logo {
+  width: 180px;
+}
+.intro__title {
+  font-size: 20px;
+}
+.intro__subtitle {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.intro__text {
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+.intro__text-bold  {
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+ .intro__button {
+  font-size: 15px;
+  padding: 13px 48px;
+ }
+ .intro__smile {
+  width: 18px;
+  height: 18px;
  }
 }
