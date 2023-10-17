@@ -1,0 +1,12 @@
+.achievs {
+  position: relative;
+  background-color: #FFEFE7;
+  /* background-image: linear-gradient(#FFEFE7 0% 20%, #E5C95C 20%, #FA6334 ); */
+  min-height: 2954px;
+}
+.achievs__back {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+ 
+}
