@@ -92,7 +92,7 @@
     #f7e089 0%,
     #e5c95c 100%
   );
-  background-clip: text;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 31px;
@@ -142,8 +142,7 @@
 
 }
 .intro__img-wrp {
-   
-    margin-bottom: 65px;
+ margin-bottom: 65px;
 }
 }
 

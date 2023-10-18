@@ -1,8 +1,7 @@
 .footer {
   background-color: #ffefe7;
-
-   background-color: #ffefe7;
   padding-bottom: 106px;
+  padding: 43px 32px 76px 32px;
 }
 .footer__text {
   max-width: 938px;
@@ -18,4 +17,13 @@
 
 .footer__span:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 540px) {
+.footer {
+  padding: 12px;
+}
+.footer__text {
+  font-size: 7px;
+}
 }
