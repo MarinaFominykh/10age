@@ -20,6 +20,16 @@
   font-weight: 400;
   line-height: 130%;
 }
+.text-gradient {
+    background: radial-gradient(
+    49.61% 49.51% at 50.08% 50.5%,
+    #f7e089 0%,
+    #e5c95c 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .list {
   list-style: none;

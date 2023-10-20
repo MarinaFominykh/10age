@@ -59,14 +59,7 @@
 }
 
 .intro__span {
-  background: radial-gradient(
-    49.61% 49.51% at 50.08% 50.5%,
-    #f7e089 0%,
-    #e5c95c 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
 }
 
 .intro__img-wrp {
@@ -87,14 +80,6 @@
   line-height: 130%;
   letter-spacing: 0.44px;
   text-transform: uppercase;
-  background: radial-gradient(
-    49.61% 49.51% at 50.08% 50.5%,
-    #f7e089 0%,
-    #e5c95c 100%
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin-bottom: 31px;
 }
 
