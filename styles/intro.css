@@ -1,8 +1,6 @@
 .intro {
   position: relative;
-
   background: url(../images/back_intro.png) top left / contain no-repeat;
-    /* background: url(../images/back_intro.png) top left / 100% 100% no-repeat; */
   background-color: #ffefe7;
   margin: auto;
   padding: 35px 32px 50px 32px;

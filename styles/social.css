@@ -3,6 +3,7 @@ margin: auto;
 background-color: #FFEFE7; 
 padding: 36px 32px 0 32px;
 position: relative;
+overflow: hidden;
 
 }
 .social__back-wrp-right {
