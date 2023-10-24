@@ -1,6 +1,9 @@
 .presents {
   background: #fbfbfb;
-  padding: 66px 0 45px 0;
+  background: url(../images/present_orange.png) top right / 278px no-repeat,
+    url(../images/present_yellow.png) center left / 261px no-repeat;
+  padding: 66px 32px 45px 32px;
+  /* overflow: hidden; */
 }
 .presents__content {
   max-width: 939px;
@@ -10,11 +13,12 @@
   display: flex;
   gap: 7px;
   margin-bottom: 45px;
+  justify-content: center;
 }
 .presents__main-present {
-  width: 365px;
-
-  border-radius: 62px;
+  max-width: 365px;
+  width: 100%;
+  border-radius: 32px;
   box-shadow: 0px 27.10726px 33.36277px 0px rgba(70, 70, 70, 0.17);
   padding-top: 202px;
   background-image: url(../images/hands.png);
@@ -151,7 +155,9 @@
 }
 
 .presents__slider {
-  max-width: 550px;
+   margin: 0; 
+   min-width: 358px;
+
 }
 .presents__offer {
   max-width: 939px;
@@ -160,4 +166,49 @@
 }
 .presents__offer-span {
   color: #fa6334;
+}
+
+@media screen and (max-width: 1500px) {
+  .presents {
+    background: #fbfbfb;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .presents {
+    padding: 35px 24px 31px 24px;
+  }
+  .presents__main-present {
+    /* width: 241px; */
+    border-radius: 20px;
+  }
+  .presents__card-content {
+    border-radius: 40px;
+  }
+  .presents__card-title {
+    font-size: 17px;
+
+  }
+  .presents__slider {
+   margin: 0;
+   /* max-width: 358px;  */
+
+}
+}
+@media screen and (max-width: 540px) {
+  .presents {
+    padding: 15px 24px 13px 24px;
+    background: #fbfbfb;
+    background: url(../images/present_orange.png) top right / 278px no-repeat,
+      url(../images/present_yellow.png) center left / 261px no-repeat;
+  }
+  .presents__cards {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .presents__main-present {
+    
+    
+  }
 }
