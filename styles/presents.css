@@ -14,11 +14,12 @@
   gap: 7px;
   margin-bottom: 45px;
   justify-content: center;
+  align-items: center;
 }
 .presents__main-present {
   max-width: 365px;
   width: 100%;
-  border-radius: 32px;
+  border-radius: 32px 32px 64px 64px;
   box-shadow: 0px 27.10726px 33.36277px 0px rgba(70, 70, 70, 0.17);
   padding-top: 202px;
   background-image: url(../images/hands.png);
@@ -27,7 +28,8 @@
   background-position: top center;
 }
 .presents__card-content {
-  border: 7.683px solid #fa6334;
+  border: 7px solid #E5C95C;
+  border-radius: 7px;
   border-radius: 62px;
   background: #fff;
   padding: 28px 12px 22px 12px;
@@ -57,7 +59,7 @@
   font-weight: 700;
   line-height: 120%;
   text-transform: uppercase;
-  border-radius: 22px;
+  border-radius: 14px;
   border: 0;
   transition: 0.3s;
   cursor: pointer;
@@ -77,14 +79,29 @@
 }
 .presents__list {
   display: flex;
+  padding: 56px 0;
 }
 .presents__present {
+  position: relative;
   border-radius: 32px;
-  background-image: url(../images/cabinet.png);
+  /* background-image: url(../images/cabinet.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: top center;
-  padding-top: 189px;
+  background-position: top center; */
+  
+}
+.presents__img-wrp {
+position: relative;
+width: 100%;
+overflow: hidden;
+border-radius: 32px;
+z-index: -1;
+
+}
+.presents__img {
+width: 100%;
+object-fit: cover;
+object-position: center;
 }
 .presents__text-cntr {
   border-radius: 32px;
@@ -94,6 +111,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -20px;
 }
 .presents__present-title {
   font-size: 15px;
@@ -103,7 +121,6 @@
 }
 .presents__present-subtitle {
   font-size: 20px;
-
   font-weight: 700;
   line-height: 120%;
   text-transform: uppercase;
@@ -136,28 +153,27 @@
 }
 
 .presents__progress {
-  position: relative;
+  /* position: relative;
   width: 226px;
   height: 14px;
   border-radius: 32px;
   box-shadow: inset 0px 4px 3px rgba(70, 70, 70, 0.17);
-  margin-bottom: 19px;
+  margin-bottom: 19px; */
 }
 .presents__progress::before {
-  content: '';
+  /* content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100px;
   height: 14px;
   border-radius: 32px;
-  background-color: #fa6334;
+  background-color: #fa6334; */
 }
 
 .presents__slider {
-   margin: 0; 
-   min-width: 358px;
-
+  margin: 0;
+  min-width: 358px;
 }
 .presents__offer {
   max-width: 939px;
@@ -179,21 +195,36 @@
     padding: 35px 24px 31px 24px;
   }
   .presents__main-present {
-    /* width: 241px; */
     border-radius: 20px;
   }
   .presents__card-content {
     border-radius: 40px;
+    padding: 18px 10px 14px 10px;
   }
   .presents__card-title {
     font-size: 17px;
-
+    margin-bottom: 41px;
+  }
+  .presents__card-txt {
+    font-size: 12px;
+    margin-bottom: 68px;
   }
   .presents__slider {
-   margin: 0;
-   /* max-width: 358px;  */
-
-}
+    margin: 0;
+    
+  }    
+  .presents__button {
+   font-size: 25px;
+  }
+  .presents__present {
+    border-radius: 20px;
+    
+  }
+  .presents__text-cntr {
+    border-radius: 20px;
+    padding: 12px 10px;
+  }
+  
 }
 @media screen and (max-width: 540px) {
   .presents {
@@ -203,12 +234,44 @@
       url(../images/present_yellow.png) center left / 261px no-repeat;
   }
   .presents__cards {
-    flex-direction: column;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     gap: 12px;
     align-items: center;
   }
   .presents__main-present {
+    border-radius: 30px;
+  }
+  .presents__card-content {
+    border-radius: 31px;
+    padding: 15px 8px 26px 8px;
+  }
+  .presents__card-title {
+    font-size: 13px;
+  }
+  .presents__card-txt {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+    .presents__button {
+    border-radius: 7px;
+    padding: 13px 0;
+    font-size: 9px;
+  }
+  .presents__list {
+    padding: 24px 0 24px 10px;
+
+  }
+  .presents__present-title, .presents__present-subtitle .presents__present-txt {
+    font-size: 9px;
+  }
+ .presents__present-txt {
     
-    
+    margin-bottom: 73px;
+  }
+  .simple-button {
+padding: 10px 24px;
+font-size: 10px;
+
   }
 }
