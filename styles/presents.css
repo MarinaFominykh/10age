@@ -6,7 +6,7 @@
   /* overflow: hidden; */
 }
 .presents__content {
-  max-width: 939px;
+  max-width: 1100px;
   margin: auto;
 }
 .presents__cards {
@@ -17,8 +17,11 @@
   align-items: center;
 }
 .presents__main-present {
-  max-width: 365px;
-  width: 100%;
+  /* max-width: 365px;
+  width: 100%; */
+  min-width: 177px;
+  max-width: 377px;
+  flex-shrink: 0;
   border-radius: 32px 32px 64px 64px;
   box-shadow: 0px 27.10726px 33.36277px 0px rgba(70, 70, 70, 0.17);
   padding-top: 202px;
@@ -33,6 +36,10 @@
   border-radius: 62px;
   background: #fff;
   padding: 28px 12px 22px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 624px;
 }
 .presents__card-title {
   font-size: 26px;
@@ -50,7 +57,7 @@
 }
 .presents__button {
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   padding: 22px 0px;
   text-align: center;
   background: radial-gradient(130px 82px at 50% 50%, #f9e38e 0%, #e5c95c 100%);
@@ -77,6 +84,9 @@
     #fa6334 100%
   );
 }
+.presents__button-wrp {
+  width: 100%;
+}
 .presents__list {
   display: flex;
   padding: 56px 0;
@@ -84,34 +94,38 @@
 .presents__present {
   position: relative;
   border-radius: 32px;
-  /* background-image: url(../images/cabinet.png);
+min-height: 645px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+ /* background-image: url(../images/presents/cabinet.png); */
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: top center; */
+  background-position: top center;
   
 }
 .presents__img-wrp {
-position: relative;
 width: 100%;
+max-height: 187px;
 overflow: hidden;
 border-radius: 32px;
 z-index: -1;
 
 }
-.presents__img {
-width: 100%;
-object-fit: cover;
-object-position: center;
-}
+
 .presents__text-cntr {
   border-radius: 32px;
-  background: #fff;
+  /* background: #fff; */
   box-shadow: 0px 14.22183px 17.50379px 0px rgba(70, 70, 70, 0.17);
   padding: 21px 12px 18px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   margin-top: -20px;
+  min-height: 442px;
+  background: linear-gradient(179deg, #F4F4F4 1.08%, #FEFEFE 88.01%);
+
 }
 .presents__present-title {
   font-size: 15px;
@@ -170,6 +184,12 @@ object-position: center;
   border-radius: 32px;
   background-color: #fa6334; */
 }
+.swiper-wrapper {
+max-width: 559px;
+}
+.swiper-slide {
+  margin-right: 0;
+}
 
 .presents__slider {
   margin: 0;
@@ -188,6 +208,7 @@ object-position: center;
   .presents {
     background: #fbfbfb;
   }
+
 }
 
 @media screen and (max-width: 960px) {
@@ -200,6 +221,7 @@ object-position: center;
   .presents__card-content {
     border-radius: 40px;
     padding: 18px 10px 14px 10px;
+    min-height: 399px;
   }
   .presents__card-title {
     font-size: 17px;
@@ -212,10 +234,11 @@ object-position: center;
   .presents__slider {
     margin: 0;
     
-  }    
-  .presents__button {
-   font-size: 25px;
-  }
+  }  
+  .swiper-wrapper {
+max-width: 377px;
+}  
+ 
   .presents__present {
     border-radius: 20px;
     
@@ -224,7 +247,24 @@ object-position: center;
     border-radius: 20px;
     padding: 12px 10px;
   }
+      .presents__button {
+    border-radius: 14px;
+     font-size: 13px;
+  }
+  .simple__button {
+    border-radius: 9px;
+     font-size: 10px;
+     padding: 11px;
+  }
   
+}
+@media screen and (max-width: 720px) {
+  .presents__cards {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
 }
 @media screen and (max-width: 540px) {
   .presents {
@@ -233,18 +273,14 @@ object-position: center;
     background: url(../images/present_orange.png) top right / 278px no-repeat,
       url(../images/present_yellow.png) center left / 261px no-repeat;
   }
-  .presents__cards {
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-  }
+
   .presents__main-present {
     border-radius: 30px;
   }
   .presents__card-content {
     border-radius: 31px;
     padding: 15px 8px 26px 8px;
+    min-height: 260px;
   }
   .presents__card-title {
     font-size: 13px;
