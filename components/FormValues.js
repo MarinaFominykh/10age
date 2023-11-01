@@ -19,17 +19,32 @@ export class FormValues {
     });
 
     return this._formValues;
+  //   const { elements } = this._form;
+
+  //   const data = Array.from(elements)
+  //     .map((element) => {
+  //       const { name, type } = element;
+  //       let value;
+  //       if (type === 'checkbox') {
+  //         value = element.checked;
+  //       }
+  //         else if (type === 'radio') {
+  //         element.checked ? value = element.value : value = ''
+  //       } else value = element.value;
+  //       return { name, value };
+  //     })
+  //     .filter((item) => !!item.value);
+
+  //  return data;
   }
   // Подписки на события
   setEventListeners() {
-
     this._form.addEventListener('submit', (event) => {
       event.preventDefault();
       this._submitForm(this._getInputValues());
-      console.log('formValues', this._getInputValues())
     });
     this._otherInput.addEventListener('input', (event) => {
-        this._radioButton.forEach((item) => {
+      this._radioButton.forEach((item) => {
         item.checked = false;
       });
     });
@@ -39,8 +54,8 @@ export class FormValues {
     this._radioButton.forEach((button) => {
       button.addEventListener('change', () => {
         this._otherInput.value = '';
-      })
-    })
+      });
+    });
   }
 
   //Очистка формы

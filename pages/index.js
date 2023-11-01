@@ -4,14 +4,17 @@ import { Popup } from '../components/Popup.js';
 import { FormValues } from '../components/FormValues.js';
 import { initialPresents } from '../data/presents.js';
 import {
-  sectionSelector,templateSelector, donationsFormSelector
-
+  sectionSelector,
+  templateSelector,
+  donationsFormSelector,
+  openPopupReccurentPayButton,
+  MERCHANT_CAMPAIGN_ID,
+  KEY,
+  shareLink,
 } from '../utils/constans.js';
+import { copyURL } from '../utils/functions.js';
 
-const openPopupButton = document.querySelector('.presents__button')
-
-let id;
-
+let id = '';
 
 const slideList = new Section(
   {
@@ -33,23 +36,23 @@ function getSlide(data) {
   return slide.getSlide();
 }
 
-
-const popup = new Popup(id);
+const popup = new Popup();
 
 //открытие и закрытие модального окна:
-popup.setEventListeners();
-openPopupButton.addEventListener('click',handleCardClick)
+popup.setEventListeners(id);
+openPopupReccurentPayButton.addEventListener('click', () => popup.open());
+
 //обработка клика по кнопке 'присоединиться'
-function handleCardClick(_id, _name) {
+function handleCardClick(_id) {
   id = _id;
-  popup.open(_name);
+  popup.open();
 }
 //Форма
 const formDonations = new FormValues(
   {
     submitForm: (data) => {
-      // sendPayTotal(data);
-      // formDonations.reset();
+      sendPay(data);
+      formDonations.reset();
     },
   },
   donationsFormSelector
@@ -59,29 +62,63 @@ formDonations.setEventListeners();
 
 // инициализация слайдера:
 const swiper = new Swiper('.swiper', {
+  autoHeight: true,
   slidesPerView: 1,
   spaceBetween: 10,
   // loop: true,
-  
+
   pagination: {
     el: '.swiper-pagination',
     dynamicBullets: true,
     clickable: true,
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.next',
+    prevEl: '.prev',
   },
   centeredSlides: false,
   speed: 800,
-  // simulateTouch: true,
+  simulateTouch: true,
   breakpoints: {
- 
-    820: {
+    640: {
       slidesPerView: 2,
-      spaceBetween: 20
+      spaceBetween: 20,
+      autoHeight: false,
     },
-   
-  }
+  },
 });
-
+// Приведение суммы к минорным единицам:
+function addTwoZeros(string) {
+  let number = parseInt(string);
+  number = number * 100;
+  return number;
+}
+function sendPay(data) {
+  const { name, email, company, otherSum, sum: selectedSum } = data;
+  const sum = addTwoZeros(otherSum || selectedSum);
+  let options = {
+    widget_key: KEY,
+    amount: sum,
+    recurrent_payment: 0,
+    merchant_fields: {
+      name,
+      email,
+      company,
+    },
+    merchant_campaign_id: MERCHANT_CAMPAIGN_ID,
+    user_fundraising_program_id: id,
+    user_email: email,
+  };
+  let M = new Mixplat(options);
+  console.log('id', options.user_fundraising_program_id);
+  M.build();
+  M.setSuccessCallback(function (o, i) {
+    popup.close();
+  });
+  M.setCloseCallback(function (o, i) {
+    popup.close();
+    id = '';
+  });
+}
+// Копирование ссылки на страницу в буфер:
+shareLink.addEventListener('click', () => copyURL(shareLink));

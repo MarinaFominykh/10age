@@ -2,19 +2,21 @@ export class Popup {
   constructor() {
     this._popup = document.querySelector('.popup');
     this._body = document.querySelector('.page');
+
     
   }
 
-  open(name) {
+  open() {
     this._popup.classList.add('popup_opened');
     this._body.classList.add('opened');
     document.addEventListener('keydown', this._handleEscClose);
-    // this._popup.querySelector('.personal-donation__name').textContent = name;
+   
   }
-  close() {
+  close(id) {
     this._popup.classList.remove('popup_opened');
     this._body.classList.remove('opened');
     document.removeEventListener('keydown', this._handleEscClose);
+   
     
     
   }

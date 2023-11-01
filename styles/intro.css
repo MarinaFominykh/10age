@@ -21,7 +21,7 @@
   }
 
   .intro__back_right {
-    top: -65px;
+  top: -65px;
   right: -198px;
   max-width: 454px;
   max-height: 1816px;
@@ -79,12 +79,14 @@
   letter-spacing: 0.44px;
   text-transform: uppercase;
   margin-bottom: 31px;
+  margin: 0 auto 31px auto;
 }
 
 .intro__text {
   font-size: 25px;
   font-weight: 400;
   margin-bottom: 17px;
+  text-align: justify;
 }
 .intro__text:nth-of-type(2) {
   margin-bottom: 13px;
@@ -93,13 +95,15 @@
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 64px;
+  text-align: justify;
 }
 
 .intro__button {
   display: flex;
+  justify-content: center;
   gap: 6px;
   border-radius: 14px;
-  background: radial-gradient(130px 82px at 50% 50%, #f9e38e 0%, #e5c95c 100%);
+  background:  #e4c548;
   color: #ffefe7;
   text-align: center;
   font-size: 29px;
@@ -107,13 +111,18 @@
   line-height: 120%;
   text-transform: uppercase;
   border: none;
-  padding: 24px 91px;
+  padding: 24px 0px;
   margin: auto;
   cursor: pointer;
-  transition: 0.3s;
+  transition: .6s;
+  max-width: 477px;
+}
+.intro__button_top {
+  margin: 0 0 0 auto;
+
 }
 .intro__button:hover {
-  opacity: 0.6;
+  background: #dfb820;
 }
 .intro__button-txt {
   color: #ffefe7;
