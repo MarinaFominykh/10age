@@ -1,9 +1,10 @@
 import { Section } from '../components/Section.js';
 import { Slide } from '../components/Slide.js';
 import { Popup } from '../components/Popup.js';
+import { FormValues } from '../components/FormValues.js';
 import { initialPresents } from '../data/presents.js';
 import {
-  sectionSelector,templateSelector
+  sectionSelector,templateSelector, donationsFormSelector
 
 } from '../utils/constans.js';
 
@@ -43,6 +44,19 @@ function handleCardClick(_id, _name) {
   id = _id;
   popup.open(_name);
 }
+//Форма
+const formDonations = new FormValues(
+  {
+    submitForm: (data) => {
+      // sendPayTotal(data);
+      // formDonations.reset();
+    },
+  },
+  donationsFormSelector
+);
+// Отправка формы:
+formDonations.setEventListeners();
+
 // инициализация слайдера:
 const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
