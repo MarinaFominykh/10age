@@ -140,6 +140,7 @@
   font-weight: 400;
   line-height: 120%;
   text-align: justify;
+  margin-bottom: 12px;
 }
 .presents__button-wrp {
   display: flex;
