@@ -34,9 +34,6 @@ export class Slide {
       '.presents__card-description'
     );
     this._slideProgress = this._slideElement.querySelector('.presents__progress');
-    // this._slideSum = this._slideElement.querySelector('.presents__current');
-    // this._slideLimit = this._slideElement.querySelector('.presents__limit');
-    // this._slideLimitMonth= this._slideElement.querySelector('.presents__limit-month');
     this._slideHelpButton = this._slideElement.querySelector('.presents__button');
     this._slideImage.src=`./images/presents/${this._src}.png`;
     this._slideImage.alt=this._title;
@@ -44,9 +41,7 @@ export class Slide {
     this._slideTitle.textContent = this._title;
      this._slideDescription.textContent = this._description;
     this._slideProgress.id = this._progressId;
-    // this._slideSum.textContent = `${addSpaces(this._currentSum)} ₽`;
-    // this._slideLimit.textContent = `${addSpaces(this._limit) } ₽`;
-    this._setEventListeners();
+     this._setEventListeners();
 
     return this._slideElement;
   };
