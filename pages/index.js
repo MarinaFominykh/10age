@@ -96,10 +96,11 @@ function addTwoZeros(string) {
 function sendPay(data) {
   const { name, email, company, otherSum, sum: selectedSum } = data;
   const sum = addTwoZeros(otherSum || selectedSum);
+  const reccurentPay = id ? 0 : 1;
   let options = {
     widget_key: KEY,
     amount: sum,
-    recurrent_payment: 0,
+    recurrent_payment: reccurentPay,
     merchant_fields: {
       name,
       email,
@@ -110,7 +111,7 @@ function sendPay(data) {
     user_email: email,
   };
   let M = new Mixplat(options);
-  console.log('id', options.user_fundraising_program_id);
+  
   M.build();
   M.setSuccessCallback(function (o, i) {
     popup.close();
