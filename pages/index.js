@@ -100,6 +100,7 @@ function sendPay(data) {
   let options = {
     widget_key: KEY,
     amount: sum,
+    payment_scheme: 'single',
     recurrent_payment: reccurentPay,
     merchant_fields: {
       name,
@@ -107,19 +108,25 @@ function sendPay(data) {
       company,
     },
     merchant_campaign_id: MERCHANT_CAMPAIGN_ID,
-    user_fundraising_program_id: id,
+    user_fundraising_program_id: id || MERCHANT_CAMPAIGN_ID,
     user_email: email,
   };
+ 
   let M = new Mixplat(options);
   
   M.build();
   M.setSuccessCallback(function (o, i) {
     popup.close();
+    id = '';
   });
   M.setCloseCallback(function (o, i) {
     popup.close();
     id = '';
   });
+  M.setFailCallback(function(o, i){
+  popup.close();
+    id = '';
+});
 }
 // Копирование ссылки на страницу в буфер:
 shareLink.addEventListener('click', () => copyURL(shareLink));
